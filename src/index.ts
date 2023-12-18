@@ -38,5 +38,5 @@ async function cleanUpHotel(): Promise<void> {
 
 function roomName(voiceState: VoiceState) {
   const id = voiceState.member?.id ?? Math.floor(Math.random() * 1000);
-  return `Room ${Number(id) % 1000 + 1}`;
+  return `Room ${Number(id) % 999 + 1}`;
 }
