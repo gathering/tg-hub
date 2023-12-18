@@ -1,0 +1,27 @@
+name: Docker Image
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  ghcr:
+    name: ${{ github.ref == 'refs/heads/main' && 'Build and Push' || 'Test Build' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Login to ghcr.io
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ${{ github.ref == 'refs/heads/main' && 'Build and Push' || 'Test Build' }}
+        uses: docker/build-push-action@v5
+        with:
+            push: ${{ github.ref == 'refs/heads/main' }}
+            tags: ghcr.io/gathering/tg-hub:latest
