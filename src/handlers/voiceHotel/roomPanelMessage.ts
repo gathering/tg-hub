@@ -10,8 +10,6 @@ export default function roomPanelMessage(channel: VoiceChannel): MessageCreateOp
   const isHidden = Boolean(everyone?.deny.has(PermissionFlagsBits.ViewChannel));
   const isLocked = isHidden || Boolean(everyone?.deny.has(PermissionFlagsBits.Connect));
 
-  console.log(channel.partial, everyone, isHidden, isLocked);
-
   return {
     embeds: [
       {
