@@ -10,4 +10,5 @@ export default {
     hubVoiceId: process.env["HUB_VOICE_CHANNEL_ID"],
     hotelCategoryId: process.env["HOTEL_CATEGORY_CHANNEL_ID"],
   },
+  color: 0x12214A,
 };
