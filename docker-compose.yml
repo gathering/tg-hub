@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  bot:
+    image: ghcr.io/gathering/tg-hub:latest
+    restart: always
+    env_file:
+      - ./.env
