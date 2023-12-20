@@ -3,13 +3,13 @@ import { PermissionFlagsBits } from "discord.js";
 
 export const hotelRoomPermissions = {
   owner: [
-    PermissionFlagsBits.KickMembers,
-    PermissionFlagsBits.MuteMembers,
-    PermissionFlagsBits.DeafenMembers,
+    PermissionFlagsBits.ViewChannel,
+    PermissionFlagsBits.MoveMembers,
     PermissionFlagsBits.Connect,
   ],
   bot: [
     PermissionFlagsBits.ManageChannels,
+    PermissionFlagsBits.ManageRoles,
     PermissionFlagsBits.MoveMembers,
   ],
 } as const;

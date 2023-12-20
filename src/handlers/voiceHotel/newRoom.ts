@@ -12,16 +12,13 @@ export default async function createNewRoom(voiceState: VoiceState): Promise<Voi
     name,
     type: ChannelType.GuildVoice,
     parent: hotelCategory,
-    permissionOverwrites: [
-      {
-        id: voiceState.member!,
-        allow: hotelRoomPermissions.owner,
-      },
-      {
-        id: voiceState.client.user,
-        allow: [...hotelRoomPermissions.owner, ...hotelRoomPermissions.bot],
-      },
-    ],
+  }).then(async newChannel => {
+    await newChannel.permissionOverwrites.set([
+      { id: voiceState.member!, allow: [...hotelRoomPermissions.owner] },
+      { id: voiceState.client.user, allow: [...hotelRoomPermissions.owner, ...hotelRoomPermissions.bot] },
+      { id: voiceState.guild.roles.everyone },
+    ]);
+    return newChannel;
   });
   void channel.send({
     ...voiceState.member && {
