@@ -1,19 +1,14 @@
-FROM node:18-alpine AS base
-
+FROM node:22-alpine AS base
 WORKDIR /app
 
 
 # install prod dependencies
 
 FROM base AS deps
-RUN apk --no-cache add g++ make python3
-RUN npm install -g pnpm@8
+RUN corepack enable pnpm
 
-COPY pnpm-lock.yaml ./
-RUN pnpm fetch
-
-COPY package.json .npmrc ./
-RUN pnpm install --frozen-lockfile --prod --offline
+COPY package.json pnpm-lock.yaml .npmrc ./
+RUN pnpm fetch && pnpm install --frozen-lockfile --prod --offline
 
 
 # install all dependencies and build typescript
