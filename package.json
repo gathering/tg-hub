@@ -10,17 +10,13 @@
     "start": "node ."
   },
   "dependencies": {
-    "bufferutil": "4.0.8",
     "discord.js": "14.14.1",
-    "dotenv": "16.3.1",
-    "erlpack": "github:discord/erlpack",
-    "utf-8-validate": "6.0.3",
-    "zlib-sync": "0.1.9"
+    "dotenv": "16.3.1"
   },
   "devDependencies": {
-    "@tsconfig/node18": "18.2.2",
+    "@tsconfig/node22": "^22.0.0",
     "@tsconfig/strictest": "2.0.2",
-    "@types/node": "18",
+    "@types/node": "22.13.10",
     "eslint": "8.56.0",
     "eslint-config-promise": "github:promise/eslint-config",
     "typescript": "5.3.3"
@@ -30,5 +26,6 @@
     "rules": {
       "no-console": "off"
     }
-  }
+  },
+  "packageManager": "pnpm@9.15.5"
 }
