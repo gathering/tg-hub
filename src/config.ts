@@ -9,6 +9,9 @@ export default {
   channels: {
     hubVoiceId: process.env["HUB_VOICE_CHANNEL_ID"],
     hotelCategoryId: process.env["HOTEL_CATEGORY_CHANNEL_ID"],
+    faqChannelId: process.env["FAQ_CHANNEL_ID"],
+    helpChannelId: process.env["HELP_CHANNEL_ID"],
   },
+  faqEndpoint: process.env["FAQ_ENDPOINT"],
   color: 0x12214A,
 };
