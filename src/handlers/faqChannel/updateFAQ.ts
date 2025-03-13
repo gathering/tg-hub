@@ -26,8 +26,8 @@ export default async function updateFAQ(client: Client<true>): Promise<void> {
         .then(channel => {
           if (!channel?.isTextBased()) throw new Error("FAQ channel is not a text channel");
           return channel.messages.fetch()
-            .then(messages => {
-              const message = messages.find(msg => msg.author.id === client.user.id) ?? channel.send("...");
+            .then(async messages => {
+              const message = messages.find(msg => msg.author.id === client.user.id) ?? await channel.send("...");
               return message;
             });
         }),
