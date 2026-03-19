@@ -64,7 +64,6 @@ export default async function updateFAQ(client: Client<true>): Promise<void> {
         }
 
         const colors = colorBlender(0xE86636, 0x12ABCF, embeds.length);
-        console.log(colors, colors.length);
         embeds.forEach((embed, index) => {
           embed.color = colors[index]!;
         });
