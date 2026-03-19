@@ -5,17 +5,17 @@ interface ButtonComponent {
 }
 
 interface SelectMenuTypes {
-  "channel": ChannelSelectMenuInteraction;
-  "mentionable": MentionableSelectMenuInteraction;
-  "role": RoleSelectMenuInteraction;
-  "string": StringSelectMenuInteraction;
-  "user": UserSelectMenuInteraction;
+  channel: ChannelSelectMenuInteraction;
+  mentionable: MentionableSelectMenuInteraction;
+  role: RoleSelectMenuInteraction;
+  string: StringSelectMenuInteraction;
+  user: UserSelectMenuInteraction;
 }
 
 type SelectMenuComponent = {
   [K in keyof SelectMenuTypes]: {
-    type: K;
     callback(interaction: SelectMenuTypes[K]): void;
+    type: K;
   }
 }[keyof SelectMenuTypes];
 

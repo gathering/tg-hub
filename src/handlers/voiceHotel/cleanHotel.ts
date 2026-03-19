@@ -1,4 +1,4 @@
-import type { Client, CategoryChannel } from "discord.js";
+import type { CategoryChannel, Client } from "discord.js";
 import { ChannelType } from "discord.js";
 import config from "../../config";
 

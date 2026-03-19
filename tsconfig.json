@@ -1,8 +1,9 @@
 {
   "include": [ "./src" ],
-  "extends": ["@tsconfig/node22", "@tsconfig/strictest"],
+  "extends": ["@tsconfig/node24", "@tsconfig/strictest"],
   "compilerOptions": {
     "outDir": "./build",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "lib": ["es2024", "ESNext.Array", "ESNext.Collection", "ESNext.Iterator", "ESNext.Promise"] // there's something wrong with "ESNext.Error" in @tsconfig/node24
   }
 }

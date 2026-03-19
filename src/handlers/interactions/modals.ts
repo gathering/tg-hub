@@ -1,4 +1,4 @@
-import type { ActionRowData, TextInputComponentData, ModalSubmitInteraction } from "discord.js";
+import type { ActionRowData, ModalSubmitInteraction, TextInputComponentData } from "discord.js";
 import { ComponentType } from "discord.js";
 
 
@@ -22,9 +22,9 @@ export function createModalTextInput(options: Omit<TextInputComponentData, "type
   };
 }
 
-export function getModalTextInput(actionRows: ModalSubmitInteraction["components"], customId: string): string | null {
-  const actionRow = actionRows.find(row => row.components.some(component => component.customId === customId));
-  if (!actionRow) return null;
+export function getModalTextInput(actionRows: ModalSubmitInteraction["components"], customId: string): null | string {
+  const actionRow = actionRows.find(row => row.type === ComponentType.ActionRow && row.components.some(component => component.customId === customId));
+  if (!(actionRow?.type === ComponentType.ActionRow)) return null;
 
   const textInput = actionRow.components.find(component => component.customId === customId);
   if (!textInput) return null;

@@ -1,4 +1,4 @@
-import type { VoiceState, VoiceChannel, CategoryChannel } from "discord.js";
+import type { CategoryChannel, VoiceChannel, VoiceState } from "discord.js";
 import { ChannelType } from "discord.js";
 import config from "../../config";
 import roomName from "../../constants/roomName";
