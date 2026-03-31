@@ -2,6 +2,8 @@ import { Client, IntentsBitField } from "discord.js";
 import config from "./config";
 import faqChannelHandler from "./handlers/faqChannel";
 import interactionHandler from "./handlers/interactions";
+import scheduleHandler from "./handlers/schedule";
+import "./database";
 import voiceHotelHandler from "./handlers/voiceHotel";
 
 const client = new Client({
@@ -17,5 +19,6 @@ void client
     faqChannelHandler(trueClient);
     interactionHandler(trueClient);
     voiceHotelHandler(trueClient);
+    scheduleHandler(trueClient);
   })
   .login(config.token);

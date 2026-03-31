@@ -6,3 +6,11 @@ services:
     restart: always
     env_file:
       - ./.env
+    environment:
+      - TZ=Europe/Oslo
+      - DATABASE_URI=mongodb://db
+  db:
+    image: mongo:4
+    restart: always
+    volumes:
+      - ./database:/data/db
