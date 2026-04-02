@@ -18,16 +18,16 @@ export default {
 const messagesPerPage = 5;
 
 async function refreshList(uniqueIdentifier: string, userId: Snowflake, page = 0): Promise<InteractionReplyOptions & InteractionUpdateOptions> {
-  const scheduledMessages = await ScheduledMessage
-    .find({ messageId: { $exists: false } })
-    .sort({ sendAt: "ascending" })
-    .exec();
+  const scheduledMessages = await ScheduledMessage.find({ messageId: { $exists: false } });
 
   const totalPages = Math.ceil(scheduledMessages.length / messagesPerPage);
 
   const components: TopLevelComponentData[] = [];
 
-  for (const message of scheduledMessages.slice(page * messagesPerPage, (page + 1) * messagesPerPage)) {
+  for (const message of scheduledMessages
+    .sort((a, b) => a.sendAt.getTime() - b.sendAt.getTime())
+    .slice(page * messagesPerPage, (page + 1) * messagesPerPage)
+  ) {
     components.push({
       type: ComponentType.Container,
       accentColor: parseInt(message.id, 16),
