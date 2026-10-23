@@ -10,22 +10,22 @@
     "start": "node ."
   },
   "dependencies": {
-    "@typegoose/typegoose": "13.2.1",
-    "chrono-node": "2.9.0",
-    "discord.js": "14.25.1",
-    "dotenv": "17.3.1",
+    "@typegoose/typegoose": "13.5.0",
+    "chrono-node": "2.10.3",
+    "discord.js": "14.27.0",
+    "dotenv": "18.0.9",
     "human-date": "1.4.0",
-    "mongoose": "9.3.3",
+    "mongoose": "9.11.4",
     "safe-timers": "1.1.0"
   },
   "devDependencies": {
-    "@tsconfig/node24": "24.0.4",
+    "@tsconfig/node24": "24.0.5",
     "@tsconfig/strictest": "2.0.8",
-    "@types/node": "24.12.0",
+    "@types/node": "24.19.2",
     "@types/safe-timers": "1.1.2",
-    "eslint": "9.39.4",
-    "eslint-config-promise": "github:promise/eslint-config#a0fcce24ddfc75c59a0de72dc42997080a907f59",
+    "eslint": "10.13.0",
+    "eslint-config-promise": "github:promise/eslint-config",
     "typescript": "5.9.3"
   },
-  "packageManager": "pnpm@10.32.1"
+  "packageManager": "pnpm@12.15.0"
 }

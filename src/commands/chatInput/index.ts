@@ -7,14 +7,14 @@ export interface ChatInputCommand {
   execute(interaction: ChatInputCommandInteraction<"cached">): Awaitable<void>;
   name: string;
   options?: Array<
-    | ({ autocomplete: Autocomplete<number> } & Omit<ApplicationCommandAutocompleteNumericOptionData, "autocomplete">)
-    | ({ autocomplete: Autocomplete<string> } & Omit<ApplicationCommandAutocompleteStringOptionData, "autocomplete">)
-    | ApplicationCommandBooleanOptionData
-    | ApplicationCommandChannelOptionData
-    | ApplicationCommandMentionableOptionData
-    | ApplicationCommandNonOptionsData
-    | ApplicationCommandRoleOptionData
-    | ApplicationCommandUserOptionData
+    { autocomplete: Autocomplete<number> } & Omit<ApplicationCommandAutocompleteNumericOptionData, "autocomplete"> |
+    { autocomplete: Autocomplete<string> } & Omit<ApplicationCommandAutocompleteStringOptionData, "autocomplete"> |
+    ApplicationCommandBooleanOptionData |
+    ApplicationCommandChannelOptionData |
+    ApplicationCommandMentionableOptionData |
+    ApplicationCommandNonOptionsData |
+    ApplicationCommandRoleOptionData |
+    ApplicationCommandUserOptionData
   >;
   public?: true;
 }
