@@ -15,5 +15,5 @@ export const hotelRoomPermissions = {
 } as const;
 
 export function checkOwner(member: GuildMember, room: VoiceBasedChannel): boolean {
-  return Boolean(room.permissionsFor(member).has(hotelRoomPermissions.owner));
+  return room.permissionsFor(member).has(hotelRoomPermissions.owner);
 }

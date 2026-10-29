@@ -1,0 +1,3 @@
+minimumReleaseAgeExclude:
+  - mongoose@9.11.4
+  - mquery@6.0.1

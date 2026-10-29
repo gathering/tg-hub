@@ -1,4 +1,4 @@
-import { bold, ButtonStyle, ChannelType, ComponentType, type InteractionReplyOptions, italic, type MessageCreateOptions, type MessageEditOptions, PermissionFlagsBits, TextInputStyle, type VoiceChannel } from "discord.js";
+import { bold, ButtonStyle, ChannelType, ComponentType, type InteractionReplyOptions, italic, type MessageCreateOptions, type MessageEditOptions, MessageFlags, PermissionFlagsBits, TextInputStyle, type VoiceChannel } from "discord.js";
 import config from "../../config";
 import roomName from "../../constants/roomName";
 import { buttons } from "../interactions/components";
@@ -77,7 +77,7 @@ export default function roomPanelMessage(channel: VoiceChannel): MessageCreateOp
   };
 }
 
-const noPermission: InteractionReplyOptions = { ephemeral: true, content: "You're not the owner of this room." };
+const noPermission: InteractionReplyOptions = { content: "You're not the owner of this room.", flags: [MessageFlags.Ephemeral] };
 
 buttons.set("hotelroom:hide", {
   callback(button) {

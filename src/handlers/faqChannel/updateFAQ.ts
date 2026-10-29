@@ -32,7 +32,7 @@ export default async function updateFAQ(client: Client<true>): Promise<void> {
         }),
     ])
       .then(async ([{ items }, messages]) => {
-        const { channel } = (messages[0]!);
+        const { channel } = messages[0]!;
         const embeds: APIEmbed[] = [
           {
             author: {
